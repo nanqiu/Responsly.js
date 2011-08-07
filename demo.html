@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Responsly.js Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="accordly/accordly.css">
+  <link rel="stylesheet" href="slidy/slidy.css">
+
+    <style TYPE="text/css">html, body, body div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+body { font:13px/1.231 sans-serif; *font-size:small; }
+
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+html { overflow-y: scroll; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
+
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+a:hover, a:active { outline: none; }
+
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+
+small { font-size: 85%; }
+b, strong, th { font-weight: bold; }
+
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre {
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+button, input, select, textarea { width: auto; overflow: visible; margin: 0; font-size: 100%; font-family: sans-serif; vertical-align: baseline; }
+
+textarea { overflow: auto; vertical-align:text-top; }
+
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+
+body, select, input, textarea {
+  background: #222;
+  color: #C1C4C4;
+
+    font-family: Nobile, Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, "MS PGothic", Osaka, Sans-Serif;
+    font-size: 1em;
+    line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+::-moz-selection { background: #fe57a1; color:#fff; text-shadow: none; }
+::selection { background:#fe57a1; color:#fff; text-shadow: none; }
+
+h1, .h1 {
+  font-size: 3em;
+    line-height: 1;
+}
+h2, .h2 {
+    font-size: 2em;
+  text-shadow: 1px 1px 8px #000;
+  line-height: 1.7;
+}
+h3, .h3 {
+    font-size:1.3em;
+  line-height: 1.6;
+}
+h4, .h4 {
+    font-size: 1em;
+    line-height: 1.5;
+}
+h5, .h5 {
+    font-size: 0.7em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #747575;
+}
+h6, .h6 {
+    font-size: 1em;
+    line-height: 1;
+}
+
+a:link {
+    color: #4D5E7D;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #31CFE3;
+    text-decoration: none;
+}
+p, ul, ol, dl {
+    font-size: 0.9em;
+    line-height: 1.8;
+    margin: 0.7059em 0 0.7059em 0;
+}
+
+#container{
+    max-width: 960px;
+    margin: 2em auto;
+}
+
+blockquote {
+    font-size: 0.875em;
+    line-height: 1.714286;
+    font-style: italic;
+    font-weight: bold;
+}
+blockquote cite { font-weight: normal; }
+strong { font-weight: bold; }
+em { font-weight: bold; }
+.amp {
+    font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+    font-style: italic;
+    font-weight: normal;
+    line-height: inherit;
+}
+
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+.hidden { display: none; visibility: hidden; }
+
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+    </style>
+</head>
+
+<body>
+<a href="http://github.com/dmmalam/responsly"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+
+  <div id="container">
+
+
+    <div id="main" role="main">
+        <header>
+            <h1>Responsly.js</h1>
+            <h2> A set of responsive widgets </h2>
+        </header>
+
+        <h2>WHAT</h2>
+
+        <p>Dead simple responsive widgets, written using CSS3 transformations and available as a jQuery Plugin. Currently a sideshow and accordion are available, more to come!</p>
+
+        <h2>WHY</h2>
+
+        <p>Responsive designs are cool! Not only do they allow you to reach mobile and tablet users with minimal effort, they also make your context scale up for desktop users with larger screens.</p>
+
+        <p>Unfortunately it means in general you can't use fixed sizes throughout your CSS. While this may not be a problem for new sites, a lot of existing widgets are hard-coded to various sizes.</p>
+
+        <p>I had this problem when building my <a href="http://dharmeshmalam.com">blog</a>, and at our startup <a href=http://quillu.com>Quilly</a>, so I developed a slideshow and accordion using various techniques to ensure they scale with their content and well as their containing div. This comes down to ensuring that width or height are never hard coded in the CSS. Also extensive use of CSS3, particularly the transitions ensures rich UI that works great in modern browsers, with graceful degradation for IE.</p>
+
+        <p>We though the work could be useful for others, so it was extracted into a library for reuse.</p>
+
+        <h2>FEATURES</h2>
+
+        <ul>
+        <li>Works from large monitors to laptops, to tablets to mobiles.</li>
+        <li>Pure CSS styling</li>
+        <li>CSS3 based transitions (hardware accelerated where possible).</li>
+        <li>Animations work on all modern browsers including mobile, (IE degrades gracefully by losing transitions).</li>
+        <li>Minimal dependence on jQuery for convenience ( can substitute Zepto, or pure JavaScript).</li>
+        <li>Simple lightweight design, adds little to your download size</li>
+        <li>Compartmentalized, so use only what you want</li>
+        <li>Best used with a responsive CSS framework like 1140px or 320plus</li>
+        <li>Can be heavily customized by editing CSS</li>
+        </ul>
+
+        <h2>HOW</h2>
+
+        <ul>
+        <li>Download / Clone files,</li>
+        <li>Add references to CSS / JS</li>
+        <li>Add boilerplate placeholder HTML</li>
+        <li>Use jQuery to attach widgets.</li>
+        <li>See demo.html for examples.</li>
+        </ul>
+
+        <h2>Library</h2>
+
+        <p>Currently there are two widgets</p>
+
+        <h3>Slidy</h3>
+
+        <p>A responsive CSS based animating sideshow with many options</p>
+
+        <ul>
+        <li>Show / hide buttons</li>
+        <li>Use keyboard navigation</li>
+        <li>Auto start slideshow, set intervals</li>
+        <li>Can use throttling with <a href="http://benalman.com/projects/jquery-throttle-debounce-plugin/">jQuery throttle plugin</a></li>
+        </ul>
+
+        <h4>Demo</h4>
+            <h5>Click through the demo to see how to set up slidy</h5>
+            <h5>Hint you can use the left/right keys</h5>
+
+            <div id="slidyBanner" class="slidyContainer" title="Your tooltip text">
+                    <div class="slidySlides">
+
+                        <!-- Each slide is wrapped in figure section -->
+
+                        <!-- Slide 1 -->
+                        <!-- add the 'slidyCurrent' class to which slide you want as default -->
+                        <figure class="slidyCurrent">
+                            <!-- Your context goes here -->
+                            <img  alt="Uyuni, Bolivia" src="img/banner/16 Uyuni Salt Flats - 61 - Banner.jpg">
+                            <!-- Use the figcaption element to add captions -->
+                            <br/>
+                            <figcaption>An Image</figcaption>
+                        </figure>
+
+                        <!-- Slide 2 -->
+                        <figure>
+                            <img  alt="Shanghai, China"  src="img/banner/2 Shanghai - 38 - Banner.jpg">
+                            <figcaption>Another image</figcaption>
+                        </figure>
+
+                        <!-- Slide 3 -->
+                        <figure>
+                            <div style="margin:3em 2em">
+                                <h3> I am some text</h3>
+                                <h4> Your not limited to images, you can have what ever you want </h4>
+                                <h4> Press next to see how to wire this baby up </h4>
+                            </div>
+                            <figcaption>Text</figcaption>
+                        </figure>
+
+                        <!-- Add more slides as necessary -->
+
+                        <figure>
+                            <div style="margin:3em 2em">
+                                <h4>Add references, make sure jQuery is available</h4>
+                                <pre><code>
+    &lt;link rel="stylesheet" href="slidy.css"&gt;
+    &lt;script src="slidy.js"&gt;&lt;/script&gt;
+                                </code></pre>
+                                <figcaption>Step 1</figcaption>
+                            </div>
+                        </figure>
+
+                        <figure>
+                            <div style="margin:3em 2em">
+                            <h4>Add boilerplate HTML to wherever your want the slideshow. This is usually some responsive container</h4>
+                            <pre><code>
+    &lt;div id="slidyBanner" class="slidyContainer" title="Your tooltip text"&lt;
+        &lt;div class="slidySlides"&gt;
+
+            &lt;!-- Each slide is wrapped in figure section --&gt;
+
+            &lt;!-- Slide 1 --&gt;
+            &lt;!-- add the 'slidyCurrent' class to which slide you want as default --&gt;
+            &lt;figure class="slidyCurrent"&gt;
+                &lt;!-- Your context goes here --&gt;
+                &lt;img  alt="Uyuni, Bolivia" src="img/banner/16 Uyuni Salt Flats - 61 - Banner.jpg"&gt;
+                &lt;!-- Use the figcaption element to add captions --&gt;
+                &lt;figcaption&gt;An Image&lt;/figcaption&gt;
+            &lt;/figure&gt;
+
+            &lt;!-- Slide 2 --&gt;
+            &lt;figure&gt;
+                &lt;img  alt="Shanghai, China"  src="img/banner/2 Shanghai - 38 - Banner.jpg"&gt;
+                &lt;figcaption&gt;Another image&lt;/figcaption&gt;
+            &lt;/figure&gt;
+
+            &lt;!-- Slide 3 --&gt;
+            &lt;figure&gt;
+                &lt;p&gt; I am some text&lt;/p&gt;
+                &lt;p&gt; Your not limited to images, you can have what ever you want &lt;/p&gt;
+                &lt;figcaption&gt;Text&lt;/figcaption&gt;
+            &lt;/figure&gt;
+
+            &lt;!-- Add more slides as necessary --&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+                                </code></pre>
+                            </div>
+                            <figcaption>Step 2</figcaption>
+                        </figure>
+
+                        <figure>
+                            <div style="margin:3em 2em">
+                            <h4>Wire up with options</h4>
+                            <pre><code>
+    $('.slidyContainer').slidy({
+        // Options go here, see slidy.js
+        // These the defaults so don't only need to be specified if they are changed
+
+        throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
+        throttleTime: 500, // number of ms to wait for throttling
+        showArrows: true, // Show arrows for next/prev image
+        movePrev: 'movePrev', // Div id to use for previous button
+        moveNext: 'moveNext', // Div id to use for next button
+        useKeybord: true, // use keys defined below to expand / collapse sections
+        auto: false,       // Start slideshow automatically
+        interval: 6000,     // Time between each slide
+        initialInterval: 10000  // Initial interval when page loads
+
+    });
+                                </code></pre>
+                            </div>
+                            <figcaption>Step 3</figcaption>
+                        </figure>
+
+                    </div>
+            </div>
+
+        <h3>Accordy</h3>
+
+        <p>A responsive CSS based animating accordion.</p>
+
+        <ul>
+        <li>Use keyboard navigation</li>
+        <li>Can use throttling with <a href="http://benalman.com/projects/jquery-throttle-debounce-plugin/">jQuery throttle plugin</a></li>
+        </ul>
+
+        <h4>Demo</h4>
+            <h5>Click through the demo to see how to set up accordy</h5>
+            <h5>Hint you can use the j/k keys</h5>
+        <div class="accordion">
+            <!-- Section 1 -->
+            <section>
+                <hgroup>
+                    <h4>I am section the Section 1 title</h4>
+                </hgroup>
+                <article>
+                    <h2>And I can contain any html content!</h2>
+                    <h4>Click through the steps below to see how to step me up</h4>
+                </article>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <hgroup>
+                    <h4>Step 1</h4>
+                </hgroup>
+                <article>
+                    <h4>Add references, make sure jQuery is available</h4>
+                    <pre><code>
+    &lt;link rel="stylesheet" href="accordy.css"&gt;
+    &lt;script src="accordy.js"&gt;&lt;/script&gt;
+                    </code></pre>
+                </article>
+            </section>
+
+            <section>
+                <hgroup>
+                    <h4>Step 2</h4>
+                </hgroup>
+                <article>
+                    <h4>Add boilerplate HTML to wherever your want the accordion. This is usually some responsive container</h4>
+                    <pre><code>
+    &lt;div class="accordion"&gt;
+        &lt;!-- Section 1 --&gt;
+        &lt;section&gt;
+            &lt;hgroup&gt;
+                &lt;h4&gt;Section 1 title&lt;/h4&gt;
+            &lt;/hgroup&gt;
+            &lt;article&gt;
+                &lt;h2&gt; Put your content here &lt;/h2&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Section 2 --&gt;
+        &lt;section&gt;
+            &lt;hgroup&gt;
+                &lt;h4&gt;Section 2 title&lt;/h4&gt;
+            &lt;/hgroup&gt;
+            &lt;article&gt;
+                &lt;h2&gt; This is more context and can contain anything&lt;/h2&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;!-- Add more sections as needed --&gt;
+
+    &lt;/div&gt;
+                    </code></pre>
+                </article>
+            </section>
+
+            <section>
+                <hgroup>
+                    <h4>Step 3</h4>
+                </hgroup>
+                <article>
+                    <h4>Wire up with options</h4>
+                    <pre><code>
+    $('.accordion').accordy({
+        // Options go here, see slidy.js
+        // These the defaults so don't only need to be specified if they are changed
+
+        throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
+        throttleTime: 500, // number of ms to wait for throttling
+        useKeybord: true, // use keys defined below to expand / collapse sections
+        keyPressUp: 75, //K
+        keyPressDown: 74 //J
+    });
+                    </code></pre>
+                </article>
+            </section>
+
+            <!-- Add more sections as needed -->
+
+        </div>
+
+        <h2>CONTRIBUTE</h2>
+
+        <p>We actively encourage additional widgets or improvements or features.
+        As usual fork, and submit pull requests</p>
+
+        <h2>TODO</h2>
+
+        <ul>
+        <li>Add mobile touch events</li>
+        <li>Find a workaround for webkit/mozilla bug, that stops transition with height is set to 100%</li>
+        </ul>
+
+        <h2>LICENSE</h2>
+
+        <p>Copyright © 2011 by D MALAM</p>
+
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:</p>
+
+        <p>The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.</p>
+
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.</p>
+
+        <footer>
+            <h4>Responsly.js © 2011 D MALAM </h4>
+        </footer>
+  </div>
+</div>
+
+  <script src="jquery.1.6.2.min.js"></script>
+  <script src="accordly/accordly.js"></script>
+  <script src="slidy/slidy.js"></script>
+
+	<script>
+		$('.slidyContainer').slidy({
+		});
+
+		$('.accordion').accordy({
+		});
+
+	</script>
+
+</body>
+</html>
