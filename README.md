@@ -47,11 +47,13 @@ A responsive CSS based animating sideshow with many options
 
 * Setup
     1. Add references, make sure jQuery is available
+
         ```html
             <link rel="stylesheet" href="slidy.css">
             <script src="slidy.js"></script>
         ```
     2. Add boilerplate HTML to wherever your want the slideshow. This is usually some responsive container
+
         ```html
         <div id="slidyBanner" class="slidyContainer" title="Your tooltip text">
                 <div class="slidySlides">
@@ -86,6 +88,7 @@ A responsive CSS based animating sideshow with many options
         </div>
         ```
     3. Wire up with options
+
         ```javascript
             <script>
             $('.slidyContainer').slidy({
@@ -115,11 +118,13 @@ A responsive CSS based animating accordion.
 
 * Setup
     1. Add references, make sure jQuery is available
+
         ```html
             <link rel="stylesheet" href="accordly.css">
             <script src="accordly.js"></script>
         ```
     2. Add boilerplate HTML to wherever your want the accordion. This is usually some responsive container
+
         ```html
             <div class="accordion">
                 <!-- Section 1 -->
@@ -147,6 +152,7 @@ A responsive CSS based animating accordion.
             </div>
         ```
     3. Wire up with options
+
         ```javascript
                 $('.accordion').accordy({
                 // Options go here, see slidy.js
@@ -158,7 +164,9 @@ A responsive CSS based animating accordion.
                 keyPressUp: 75, //K
                 keyPressDown: 74 //J
             });
+
         ```
+
 ## DEMO
 
 Check out the [demo](github.com/dmmalam/responsly.js/demo.html)
