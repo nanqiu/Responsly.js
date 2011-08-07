@@ -47,69 +47,65 @@ A responsive CSS based animating sideshow with many options
 
 * Setup
     1. Add references, make sure jQuery is available
-
-    ```html
-        <link rel="stylesheet" href="slidy.css">
-        <script src="slidy.js"></script>
-    ```
+        ```html
+            <link rel="stylesheet" href="slidy.css">
+            <script src="slidy.js"></script>
+        ```
     2. Add boilerplate HTML to wherever your want the slideshow. This is usually some responsive container
+        ```html
+        <div id="slidyBanner" class="slidyContainer" title="Your tooltip text">
+                <div class="slidySlides">
 
-    ```html
-    <div id="slidyBanner" class="slidyContainer" title="Your tooltip text">
-            <div class="slidySlides">
+                    <!-- Each slide is wrapped in figure section -->
 
-                <!-- Each slide is wrapped in figure section -->
+                    <!-- Slide 1 -->
+                    <!-- add the 'slidyCurrent' class to which slide you want as default -->
+                    <figure class="slidyCurrent">
+                        <!-- Your context goes here -->
+                        <img  alt="Uyuni, Bolivia" src="img/banner/16 Uyuni Salt Flats - 61 - Banner.jpg">
+                        <!-- Use the figcaption element to add captions -->
+                        <figcaption>An Image</figcaption>
+                    </figure>
 
-                <!-- Slide 1 -->
-                <!-- add the 'slidyCurrent' class to which slide you want as default -->
-                <figure class="slidyCurrent">
-                    <!-- Your context goes here -->
-                    <img  alt="Uyuni, Bolivia" src="img/banner/16 Uyuni Salt Flats - 61 - Banner.jpg">
-                    <!-- Use the figcaption element to add captions -->
-                    <figcaption>An Image</figcaption>
-                </figure>
+                    <!-- Slide 2 -->
+                    <figure>
+                        <img  alt="Shanghai, China"  src="img/banner/2 Shanghai - 38 - Banner.jpg">
+                        <figcaption>Another image</figcaption>
+                    </figure>
 
-                <!-- Slide 2 -->
-                <figure>
-                    <img  alt="Shanghai, China"  src="img/banner/2 Shanghai - 38 - Banner.jpg">
-                    <figcaption>Another image</figcaption>
-                </figure>
+                    <!-- Slide 3 -->
+                    <figure>
+                        <p> I am some text</p>
+                        <p> Your not limited to images, you can have what ever you want </p>
+                        <figcaption>Text</figcaption>
+                    </figure>
 
-                <!-- Slide 3 -->
-                <figure>
-                    <p> I am some text</p>
-                    <p> Your not limited to images, you can have what ever you want </p>
-                    <figcaption>Text</figcaption>
-                </figure>
+                    <!-- Add more slides as necessary -->
 
-                <!-- Add more slides as necessary -->
-
-            </div>
-    </div>
-    ```
+                </div>
+        </div>
+        ```
     3. Wire up with options
+        ```javascript
+            <script>
+            $('.slidyContainer').slidy({
+                // Options go here, see slidy.js
+                // These the defaults so don't only need to be specified if they are changed
 
-    ```javascript
-        <script>
-        $('.slidyContainer').slidy({
-            // Options go here, see slidy.js
-            // These the defaults so don't only need to be specified if they are changed
+                throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
+                throttleTime: 500, // number of ms to wait for throttling
+                showArrows: true, // Show arrows for next/prev image
+                movePrev: 'movePrev', // Div id to use for previous button
+                moveNext: 'moveNext', // Div id to use for next button
+                useKeybord: true, // use keys defined below to expand / collapse sections
+                auto: false,       // Start slideshow automatically
+                interval: 6000,     // Time between each slide
+                initialInterval: 10000  // Initial interval when page loads
 
-            throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
-            throttleTime: 500, // number of ms to wait for throttling
-            showArrows: true, // Show arrows for next/prev image
-            movePrev: 'movePrev', // Div id to use for previous button
-            moveNext: 'moveNext', // Div id to use for next button
-            useKeybord: true, // use keys defined below to expand / collapse sections
-            auto: false,       // Start slideshow automatically
-            interval: 6000,     // Time between each slide
-            initialInterval: 10000  // Initial interval when page loads
+            });
 
-        });
-
-    </script>
-    ```
-
+        </script>
+        ```
 ### Accordy
 A responsive CSS based animating accordion.
 
@@ -119,54 +115,50 @@ A responsive CSS based animating accordion.
 
 * Setup
     1. Add references, make sure jQuery is available
-
-    ```html
-        <link rel="stylesheet" href="accordly.css">
-        <script src="accordly.js"></script>
-    ```
+        ```html
+            <link rel="stylesheet" href="accordly.css">
+            <script src="accordly.js"></script>
+        ```
     2. Add boilerplate HTML to wherever your want the accordion. This is usually some responsive container
+        ```html
+            <div class="accordion">
+                <!-- Section 1 -->
+                <section>
+                    <hgroup>
+                        <h4>Section 1 title</h4>
+                    </hgroup>
+                    <article>
+                        <h2> Put your content here </h2>
+                    </article>
+                </section>
 
-    ```html
-        <div class="accordion">
-            <!-- Section 1 -->
-            <section>
-                <hgroup>
-                    <h4>Section 1 title</h4>
-                </hgroup>
-                <article>
-                    <h2> Put your content here </h2>
-                </article>
-            </section>
+                <!-- Section 2 -->
+                <section>
+                    <hgroup>
+                        <h4>Section 2 title</h4>
+                    </hgroup>
+                    <article>
+                        <h2> This is more context and can contain anything</h2>
+                    </article>
+                </section>
 
-            <!-- Section 2 -->
-            <section>
-                <hgroup>
-                    <h4>Section 2 title</h4>
-                </hgroup>
-                <article>
-                    <h2> This is more context and can contain anything</h2>
-                </article>
-            </section>
+                <!-- Add more sections as needed -->
 
-            <!-- Add more sections as needed -->
-
-        </div>
-    ```
+            </div>
+        ```
     3. Wire up with options
+        ```javascript
+                $('.accordion').accordy({
+                // Options go here, see slidy.js
+                // These the defaults so don't only need to be specified if they are changed
 
-    ```javascript
-            $('.accordion').accordy({
-            // Options go here, see slidy.js
-            // These the defaults so don't only need to be specified if they are changed
-
-            throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
-            throttleTime: 500, // number of ms to wait for throttling
-            useKeybord: true, // use keys defined below to expand / collapse sections
-            keyPressUp: 75, //K
-            keyPressDown: 74 //J
-        });
-
-    ```
+                throttle: false, // Set to true, and include jQuery throttle plugin (http://benalman.com/projects/jquery-throttle-debounce-plugin/)
+                throttleTime: 500, // number of ms to wait for throttling
+                useKeybord: true, // use keys defined below to expand / collapse sections
+                keyPressUp: 75, //K
+                keyPressDown: 74 //J
+            });
+        ```
 ## DEMO
 
 Check out the [demo](github.com/dmmalam/responsly.js/demo.html)
