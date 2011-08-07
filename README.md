@@ -14,6 +14,10 @@ I had this problem when building my [blog](http://dharmeshmalam.com), and at our
 
 We though the work could be useful for others, so it was extracted into a library for reuse.
 
+## DEMO
+
+Check out the [demo](http://dmmalam.github.com/Responsly.js/)
+
 
 ## FEATURES
 * Works from large monitors to laptops, to tablets to mobiles.
@@ -167,9 +171,6 @@ A responsive CSS based animating accordion.
 
         ```
 
-## DEMO
-
-Check out the [demo](github.com/dmmalam/responsly.js/demo.html)
 
 ## CONTRIBUTE
 We actively encourage additional widgets or improvements or features.
