@@ -179,6 +179,9 @@ As usual fork, and submit pull requests
 * Add mobile touch events
 * Find a workaround for webkit/mozilla bug, that stops transition with height is set to 100%
 
+## Contact<
+Dharmesh Malam (dmmalam@gmail.com)
+
 ## LICENSE
 Copyright © 2011 by D MALAM
 
