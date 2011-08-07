@@ -1,11 +1,11 @@
 # Responsly.js
 
-## WHAT?
+## WHAT
 Dead simple responsive widgets, written using CSS3 transformations and available as a jQuery Plugin.
 Currently a sideshow and accordion are available, more to come!
 
 
-## WHY?
+## WHY
 Responsive designs are cool! Not only do they allow you to reach mobile and tablet users with minimal effort, they also make your context scale up for desktop users with larger screens.
 
 Unfortunately it means in general you can't use fixed sizes throughout your CSS. While this may not be a problem for new sites, a lot of existing widgets are hard-coded to various sizes.
@@ -27,7 +27,7 @@ We though the work could be useful for others, so it was extracted into a librar
 * Can be heavily customized by editing CSS
 
 ## HOW
-* Download / Clone files,
+* Download / Clone files
 * Add references to CSS / JS
 * Add boilerplate placeholder HTML
 * Use jQuery to attach widgets.
@@ -47,11 +47,13 @@ A responsive CSS based animating sideshow with many options
 
 * Setup
     1. Add references, make sure jQuery is available
+
     ```html
         <link rel="stylesheet" href="slidy.css">
         <script src="slidy.js"></script>
     ```
     2. Add boilerplate HTML to wherever your want the slideshow. This is usually some responsive container
+
     ```html
     <div id="slidyBanner" class="slidyContainer" title="Your tooltip text">
             <div class="slidySlides">
@@ -86,6 +88,7 @@ A responsive CSS based animating sideshow with many options
     </div>
     ```
     3. Wire up with options
+
     ```javascript
         <script>
         $('.slidyContainer').slidy({
@@ -116,6 +119,7 @@ A responsive CSS based animating accordion.
 
 * Setup
     1. Add references, make sure jQuery is available
+
     ```html
         <link rel="stylesheet" href="accordly.css">
         <script src="accordly.js"></script>
@@ -149,6 +153,7 @@ A responsive CSS based animating accordion.
         </div>
     ```
     3. Wire up with options
+
     ```javascript
             $('.accordion').accordy({
             // Options go here, see slidy.js
@@ -164,7 +169,7 @@ A responsive CSS based animating accordion.
     ```
 ## DEMO
 
-Check out the [demo](github.com/dmmalam/responsly/demo.html)
+Check out the [demo](github.com/dmmalam/responsly.js/demo.html)
 
 ## CONTRIBUTE
 We actively encourage additional widgets or improvements or features.
